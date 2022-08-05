@@ -20,4 +20,12 @@ public class HelloMessagingAppController {
     public String adduser(@RequestBody User user) {
         return user.toString();
     }
+
+    @PostMapping("adduserwithparams")
+    public String addUserWithParams(@RequestParam String firstName, @RequestParam String lastName) {
+        User user = new User();
+        user.setFirstName(firstName);
+        user.setLastName(lastName);
+        return user.toString();
+    }
 }
